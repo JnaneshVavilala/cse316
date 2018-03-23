@@ -13,6 +13,17 @@ int main()
         scanf("%d",&burst_T[i]);
         rt[i]=burst_T[i];
     }
-   
+    printf("\n\nProcess\t|Turnaround Time| Waiting Time\n\n");
+    rt[9]=9999;
+    for(j=0;remain!=n;j++)
+    {
+        smallest=9;
+        for(i=0;i<n;i++)
+        {
+            if(arrival_T[i]<=j && rt[i]<rt[smallest] && rt[i]>0)
+            {
+                smallest=i;
+            }
+        }
     return 0;
 }

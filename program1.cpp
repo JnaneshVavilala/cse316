@@ -37,6 +37,14 @@ main()
 				wt[0]=tt[0]-bt[0];
 				avg_tt=tt[0];
 				avg_wt=wt[0];
+				fclose(ptr);
+				printf("Process_id              Burst_time         Completion_time         Turnaround_time           Waiting_time\n");
+				printf("-----------------------------------------------------------------------------------------------------------\n");
+				for(i=0;i<5;i++)
+				printf("   P%d                     %d                    %d                       %d                        %d\n",pid[i],bt[i],ct[i],tt[i],wt[i]);
+				printf("Average TurnAround_Time :%.2f\n",avg_tt/5.00);
+				printf("Average Waiting Time    :%.2f\n",avg_wt/5.00);
+				goto starting;
 			
 			}
 	}
