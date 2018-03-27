@@ -25,5 +25,6 @@ int main()
                 smallest=i;
             }
         }
+         rt[smallest]--;
     return 0;
 }

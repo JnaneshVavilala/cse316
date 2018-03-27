@@ -47,5 +47,17 @@ main()
 				goto starting;
 			
 			}
+				case 2:
+			{
+			printf("Enter Values to Write in file : \n");
+			ptr=fopen("Burst.txt","wb");
+			for(i=0;i<5;i++)
+   				  {
+					scanf("%d",&y);
+					fwrite(&y,sizeof(y),1,ptr);
+   				   }
+			fclose(ptr);
+			goto starting;	
+			}
 	}
 }
