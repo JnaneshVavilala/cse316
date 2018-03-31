@@ -11,10 +11,10 @@ int main()
         scanf("%d",&arrival_T[i]);
         printf("Enter burst time for Process P%d : ",i+1);
         scanf("%d",&burst_T[i]);
-        rt[i]=burst_T[i];
+       
     }
     printf("\n\nProcess\t|Turnaround Time| Waiting Time\n\n");
-    rt[9]=9999;
+   
     for(j=0;remain!=n;j++)
     {
         smallest=9;
@@ -25,6 +25,8 @@ int main()
                 smallest=i;
             }
         }
+          remain++;
+            endTime=j+1;
          rt[smallest]--;
     return 0;
 }
