@@ -11,10 +11,10 @@ int main()
         scanf("%d",&arrival_T[i]);
         printf("Enter burst time for Process P%d : ",i+1);
         scanf("%d",&burst_T[i]);
-       
+        rt[i]=burst_T[i];
     }
     printf("\n\nProcess\t|Turnaround Time| Waiting Time\n\n");
-   
+    rt[9]=9999;
     for(j=0;remain!=n;j++)
     {
         smallest=9;
@@ -25,8 +25,17 @@ int main()
                 smallest=i;
             }
         }
-          remain++;
+        rt[smallest]--;
+        if(rt[smallest]==0)
+        {
+            remain++;
             endTime=j+1;
-         rt[smallest]--;
+            printf("\nP[%d]\t|\t%d\t|\t%d",smallest+1,endTime-arrival_T[smallest],endTime-burst_T[smallest]-arrival_T[smallest]);
+            avgwait+=endTime-burst_T[smallest]-arrival_T[smallest];
+            avgturnaround+=endTime-arrival_T[smallest];
+        }
+    }
+    printf("\n\nAverage waiting time = %f\n",avgwait*1.0/n);
+    printf("Average Turnaround time = %f",avgturnaround*1.0/5);
     return 0;
 }
